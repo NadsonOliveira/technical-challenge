@@ -1,12 +1,17 @@
 import { Module } from '@nestjs/common';
-import { Chatbots } from './entities/chatbots.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { chatsBotsController } from './chatsbots.controller';
+import { ChatbotService } from './chatbot.service';
+import { Chatbot } from './entities/chatbots.entity';
+import { ChatbotController } from './chatsbots.controller';
+import { EmbeddingEntity } from 'src/embeddings/entities/embedding.entity';
+import { DocumentEntity } from 'src/documents/entities/document.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Chatbots])],
-  controllers: [chatsBotsController],
-  exports: [TypeOrmModule],
-  providers: [],
+  imports: [
+    TypeOrmModule.forFeature([Chatbot, EmbeddingEntity, DocumentEntity]),
+  ],
+  controllers: [ChatbotController],
+  providers: [ChatbotService],
+  exports: [ChatbotService],
 })
-export class ChatBotsModule {}
+export class ChatbotModule {}

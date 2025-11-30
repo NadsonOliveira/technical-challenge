@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsString, IsOptional } from 'class-validator';
 
-export class CreateChatbotDto {
+export class UpdateChatbotDto {
   @IsString()
   @ApiProperty({
     example: 'SupportBot',
