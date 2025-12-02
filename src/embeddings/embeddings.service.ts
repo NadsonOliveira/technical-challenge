@@ -11,7 +11,7 @@ export class EmbeddingService {
     private readonly embeddingRepo: Repository<EmbeddingEntity>,
   ) {}
 
-  async generateEmbeddings(documentId: string, text: string) {
+  async generateEmbeddings(documentId: string, text?: string) {
     if (!text || text.trim().length === 0) {
       throw new NotFoundException('O texto enviado está vazio ou indefinido.');
     }

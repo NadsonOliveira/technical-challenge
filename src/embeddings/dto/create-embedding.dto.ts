@@ -11,5 +11,5 @@ export class CreateEmbeddingDto {
     example: 'Este é um texto de teste para gerar embeddings.',
     description: 'Texto extraído do PDF que será convertido em chunks',
   })
-  text: string;
+  text?: string;
 }

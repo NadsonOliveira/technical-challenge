@@ -1,14 +1,5 @@
-import {
-  Controller,
-  Post,
-  Get,
-  Patch,
-  Delete,
-  Body,
-  Param,
-} from '@nestjs/common';
+import { Controller, Post, Get, Body, Param } from '@nestjs/common';
 import { ChatbotService } from './chatbot.service';
-import { UpdateChatbotDto } from './dto/update-chatbot.dto';
 import { CreateChatbotDto } from './dto/create-chatbots.dto';
 import { AskRagDto } from './dto/askrag.dto';
 
@@ -34,15 +25,5 @@ export class ChatbotController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.chatbotService.findOne(id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() dto: UpdateChatbotDto) {
-    return this.chatbotService.update(id, dto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.chatbotService.remove(id);
   }
 }

@@ -7,7 +7,7 @@ export class EmbeddingEntity {
   id: string;
 
   @Column({ type: 'text' })
-  chunk: string;
+  chunk?: string;
 
   @Column({ type: 'float', array: true })
   vector: number[];
