@@ -153,13 +153,20 @@ Use as rotas da API (`http://localhost:3000/api`) na ordem para testar o fluxo d
 ### 2\. Fazer Upload de um Documento
 
 - **Método:** `POST`
-- **Rota:** `/api/documents`
+- **Rota:** `/api/documents/upload`
   - _(O sistema salva o arquivo no banco e extrai o texto.)_
 
-### 3\. Gerar Embeddings
+  ### 3\. Fazer Processo de um Documento
+
+- **Método:** `POST`
+- **Rota:** `/api/documents/id/process`
+  - _(O sistema processa o arquivo no banco)_
+
+### 4\. Gerar Embeddings
 
 - **Método:** `POST`
 - **Rota:** `/api/embeddings/:documentId`
+- _(pegue o id gerado no process, e adicione ao body, e adicione qualquer texto.)_
 
 Este passo irá:
 
